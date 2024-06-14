@@ -7,7 +7,6 @@ export default function Home() {
   const { address, status } = useAccount();
   return (
     <div>
-      {status === 'connected' && <p>Connected wallet address: {address}</p>}
       <Hero />
       <HomeMenu />
     </div>
