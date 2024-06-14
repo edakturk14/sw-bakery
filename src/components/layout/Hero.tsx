@@ -4,7 +4,7 @@ const img = 'https://us.123rf.com/450wm/meykitchen/meykitchen2307/meykitchen2307
 
 export function Hero() {
     return (
-        <div className="hero" style={{ height: '500px', backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="hero" style={{ height: '400px', backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">

@@ -1,29 +1,35 @@
+// HomeMenu.tsx
 "use client"
 import { MenuItem } from "../menu/MenuItem";
 import menuData from "../../app/menuData";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext, CartItem } from "..//cartContext";
 
 export function HomeMenu() {
+    const { addToCart } = useContext(CartContext);
     const [showAlert, setShowAlert] = useState(false);
 
-    const handleAddToCart = () => {
+    const handleAddToCart = (item: Omit<CartItem, 'quantity'>) => {
+        addToCart(item);
         setShowAlert(true);
-        setTimeout(() => setShowAlert(false), 3000); // Hide alert after 3 seconds
+        setTimeout(() => setShowAlert(false), 2000); // Hide alert after 3 seconds
     };
+
+    const bestSellers = menuData.filter(item => ['1', '2', '3'].includes(item._id));
 
     return (
         <div className="justify-center items-center mx-20 mt-4">
             <h2 className="text-xl font-bold text-gray-500 mb-1 text-center">Checkout</h2>
             <h1 className="text-5xl font-bold italic mb-4 text-center">Our BestSellers</h1>
             <div className="flex flex-wrap justify-center mx-5 my-5 space-x-8 space-y-5 mx-30 w-full">
-                {menuData.map(item => (
+                {bestSellers.map(item => (
                     <MenuItem
                         key={item._id}
                         image={item.image}
                         name={item.name}
                         description={item.description}
                         price={item.price}
-                        onAddToCart={handleAddToCart}
+                        onAddToCart={() => handleAddToCart(item)}
                     />
                 ))}
             </div>

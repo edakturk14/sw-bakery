@@ -1,28 +1,55 @@
+import Image from 'next/image';
+
 export function Carousel() {
     return (
         <div className="carousel rounded-box">
             <div className="carousel-item">
-                <img src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg" alt="Burger" />
+                <Image
+                    src="/images/image1.jpeg"
+                    alt="Image1"
+                    width={400}
+                    height={256}
+                    className="object-cover"
+                />
             </div>
             <div className="carousel-item">
-                <img src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg" alt="Burger" />
+                <Image
+                    src="/images/image2.jpeg"
+                    alt="Image2"
+                    width={400}
+                    height={256}
+                    className="object-cover"
+                />
             </div>
             <div className="carousel-item">
-                <img src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg" alt="Burger" />
+                <Image
+                    src="/images/image3.jpeg"
+                    alt="Image3"
+                    width={400}
+                    height={256}
+                    className="object-cover"
+                />
             </div>
             <div className="carousel-item">
-                <img src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg" alt="Burger" />
+                <Image
+                    src="/images/image4.jpeg"
+                    alt="Image4"
+                    width={400}
+                    height={256}
+                    className="object-cover"
+                />
             </div>
             <div className="carousel-item">
-                <img src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg" alt="Burger" />
-            </div>
-            <div className="carousel-item">
-                <img src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg" alt="Burger" />
-            </div>
-            <div className="carousel-item">
-                <img src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg" alt="Burger" />
+                <Image
+                    src="/images/image5.jpeg"
+                    alt="Image5"
+                    width={400}
+                    height={256}
+                    className="object-cover"
+                />
             </div>
         </div>
     );
 }
+
 export default Carousel;
