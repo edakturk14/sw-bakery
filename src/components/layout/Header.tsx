@@ -13,9 +13,9 @@ export function Header() {
         <div className="navbar bg-base-100 flex justify-between items-center">
             <nav className="flex items-center gap-4 text-gray-500 font-semibold">
                 <Link href="/">
-                    <div className="logo-container relative w-28 h-8">
+                    <div className="logo-container relative w-36 h-12">
                         <Image
-                            src="/vercel.svg"
+                            src="/new-logo.png"
                             alt="Cake Gallery Logo"
                             layout="fill"
                             objectFit="contain"

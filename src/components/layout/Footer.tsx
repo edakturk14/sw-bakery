@@ -9,7 +9,7 @@ export function Footer() {
                 </div>
             </nav>
             <aside>
-                <p>Copyright © 2024 - All right reserved by Cakeland Ltd</p>
+                <p>Copyright © 2024 - All right reserved by Onchain Bakery Ltd</p>
             </aside>
         </footer>
     );
