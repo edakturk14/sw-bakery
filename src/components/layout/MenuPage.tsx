@@ -11,9 +11,8 @@ export function MenuPage() {
     const handleAddToCart = (item: Omit<CartItem, 'quantity'>) => {
         addToCart(item);
         setShowAlert(true);
-        setTimeout(() => setShowAlert(false), 2000); // Hide alert after 3 seconds
+        setTimeout(() => setShowAlert(false), 2000);
     };
-
 
     return (
         <div className="container mx-auto p-4">
