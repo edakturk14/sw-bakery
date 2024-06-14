@@ -29,7 +29,6 @@ const ShoppingCart: React.FC = () => {
                         </div>
                         <div className="flex items-center">
                             <p className="text-lg font-semibold">${item.price.toFixed(2)}</p>
-                            <p className="ml-4 text-gray-500">Qty: {item.quantity}</p>
                             <button
                                 className="ml-4 btn btn-danger"
                                 onClick={() => removeCartProduct(index)}

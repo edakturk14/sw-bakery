@@ -6,19 +6,18 @@ import { useContext } from 'react';
 import { CartContext, CartItem } from './cartContext';
 
 export function SendTransaction() {
-    const { address, chain, isConnecting, isDisconnected } = useAccount();
-
     const { cartProducts } = useContext(CartContext);
     const totalPrice = cartProducts.reduce((acc: number, item: CartItem) => acc + item.price * item.quantity, 0).toFixed(2);
+    const totalPriceETH = (parseFloat(totalPrice) / 3900).toFixed(6);
 
-    const predefinedAddress = '0x50b153E01B96276539f962776d3A117CBE562adF'; // Replace with the recipient's address
+    const predefinedAddress = '0x50b153E01B96276539f962776d3A117CBE562adF'; //  bakery address
 
     const { data: hash, isPending, sendTransaction } = useSendTransaction();
 
     const handleSendTransaction = async () => {
         try {
-            console.log(`Sending transaction to ${predefinedAddress} with value ${totalPrice} ETH`);
-            await sendTransaction({ to: predefinedAddress, value: parseEther(totalPrice) });
+            console.log(`Sending transaction to ${predefinedAddress} with value ${totalPriceETH} ETH`);
+            await sendTransaction({ to: predefinedAddress, value: parseEther(totalPriceETH) });
         } catch (error) {
             console.error('Transaction failed', error);
         }
