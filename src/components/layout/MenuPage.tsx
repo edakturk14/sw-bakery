@@ -1,15 +1,19 @@
 "use client"
 import { MenuItem } from "../menu/MenuItem";
 import menuData from "../../app/menuData";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext, CartItem } from "../cartContext";
 
 export function MenuPage() {
+    const { addToCart } = useContext(CartContext);
     const [showAlert, setShowAlert] = useState(false);
 
-    const handleAddToCart = () => {
+    const handleAddToCart = (item: Omit<CartItem, 'quantity'>) => {
+        addToCart(item);
         setShowAlert(true);
-        setTimeout(() => setShowAlert(false), 3000); // Hide alert after 3 seconds
+        setTimeout(() => setShowAlert(false), 2000); // Hide alert after 3 seconds
     };
+
 
     return (
         <div className="container mx-auto p-4">
@@ -22,7 +26,7 @@ export function MenuPage() {
                         name={item.name}
                         description={item.description}
                         price={item.price}
-                        onAddToCart={handleAddToCart}
+                        onAddToCart={() => handleAddToCart(item)}
                     />
                 ))}
             </div>

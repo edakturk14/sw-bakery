@@ -10,8 +10,8 @@ export function AddressInput() {
     };
 
     return (
-        <div className="flex justify-center m-5">
-            <div className="form-control w-full max-w-3xl p-4 border rounded-lg shadow-md">
+        <div className="form-control w-full border rounded-lg shadow-md">
+            <div className="max-w-3xl p-4">
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4 flex space-x-4">
                         <div className="w-1/2">

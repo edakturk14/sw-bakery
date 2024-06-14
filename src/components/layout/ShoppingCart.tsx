@@ -1,11 +1,12 @@
 'use client';
 import React, { useContext } from 'react';
 import Image from 'next/image';
-import { CartContext, CartItem } from "..//cartContext";
-
+import Link from 'next/link';
+import { CartContext, CartItem } from "../cartContext"; // Adjust the import path
 
 const ShoppingCart: React.FC = () => {
     const { cartProducts, removeCartProduct } = useContext(CartContext);
+
     const total = cartProducts.reduce((acc: number, item: CartItem) => acc + item.price * item.quantity, 0);
 
     return (
@@ -41,7 +42,9 @@ const ShoppingCart: React.FC = () => {
             </div>
             <div className="mt-4 flex justify-between items-center">
                 <h2 className="text-xl font-bold">Total: ${total.toFixed(2)}</h2>
-                <button className="btn btn-success btn-lg">Checkout</button>
+                <Link href="/cart/checkout">
+                    <button className="btn btn-success btn-lg">Checkout</button>
+                </Link>
             </div>
         </div>
     );

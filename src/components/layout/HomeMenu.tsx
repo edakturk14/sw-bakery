@@ -3,7 +3,7 @@
 import { MenuItem } from "../menu/MenuItem";
 import menuData from "../../app/menuData";
 import { useState, useContext } from "react";
-import { CartContext, CartItem } from "..//cartContext";
+import { CartContext, CartItem } from "../cartContext";
 
 export function HomeMenu() {
     const { addToCart } = useContext(CartContext);
