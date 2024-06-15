@@ -4,7 +4,7 @@ import Image from "next/image";
 import { CartContext, CartItem } from "../cartContext";
 import { useContext } from "react";
 import { useAccount, useDisconnect } from 'wagmi'
-import { BlackCreateWalletButton } from "../sw/BlackCreateWalletButton";
+import { BlackCreateWalletButton, ConnectedWalletButton } from "../sw/BlackCreateWalletButton";
 
 export function Header() {
     const account = useAccount()
@@ -35,9 +35,7 @@ export function Header() {
                 <div className="dropdown dropdown-end">
                     {account.status != 'connected' && <BlackCreateWalletButton />}
                     {account.status === 'connected' && (
-                        <button type="button" onClick={() => disconnect()}>
-                            disconnect
-                        </button>
+                        <ConnectedWalletButton address={account.address} onDisconnect={disconnect} />
                     )}
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                         <div className="indicator">
