@@ -31,7 +31,7 @@ export function CheckoutPage() {
     };
 
     return (
-        <div className="form-control w-full border rounded-lg shadow-md p-4">
+        <div className="form-control w-full p-4">
             {isFormVisible ? (
                 <div className="max-w-3xl">
                     <form onSubmit={handleSubmit}>
@@ -85,15 +85,17 @@ export function CheckoutPage() {
                     </form>
                 </div>
             ) : (
-                <div className="text-center">
-                    <h3 className="font-bold text-lg">🧁 Order Summary</h3>
-                    <p className="mt-2"><strong>Name:</strong> {formData.name}</p>
-                    <p className="mt-2"><strong>Surname:</strong> {formData.surname}</p>
-                    <p className="mt-2"><strong>Email:</strong> {formData.email}</p>
-                    <p className="mt-2"><strong>Phone:</strong> {formData.phone}</p>
-                    <p className="mt-2"><strong>Address:</strong> {formData.address}</p>
-                    <p className="mt-2"><strong>City:</strong> {formData.city}</p>
-                    <p className="mt-2"><strong>Postal Code:</strong> {formData.postalCode}</p>
+                <div className=" mt-1">
+                    <h3 className="font-bold text-lg text-gray-600">🧁 Order Summary</h3>
+                    <div className="italic mt-2 mb-4">
+                        <p className="italic"><strong>Name:</strong> {formData.name}</p>
+                        <p><strong>Surname:</strong> {formData.surname}</p>
+                        <p><strong>Email:</strong> {formData.email}</p>
+                        <p><strong>Phone:</strong> {formData.phone}</p>
+                        <p><strong>Address:</strong> {formData.address}</p>
+                        <p><strong>City:</strong> {formData.city}</p>
+                        <p><strong>Postal Code:</strong> {formData.postalCode}</p>
+                    </div>
                     <SendTransaction />
                 </div>
             )}
