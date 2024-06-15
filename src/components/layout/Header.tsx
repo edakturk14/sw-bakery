@@ -19,7 +19,7 @@ export function Header() {
         <div className="navbar bg-base-100 flex justify-between items-center">
             <nav className="flex items-center gap-4 text-gray-500 font-semibold">
                 <Link href="/">
-                    <div className="logo-container relative w-36 h-12">
+                    <div className="logo-container relative w-36 h-14">
                         <Image
                             src="/new-logo.png"
                             alt="Cake Gallery Logo"
@@ -28,8 +28,8 @@ export function Header() {
                         />
                     </div>
                 </Link>
-                <Link href="/menu" className="hover:text-blue-500">Menu</Link>
-                <Link href="/about" className="hover:text-blue-500">About</Link>
+                <Link href="/menu" className="hover:text-blue-600">Menu</Link>
+                <Link href="/about" className="hover:text-blue-600">About</Link>
             </nav>
             <div className="ml-auto flex items-center">
                 <div className="dropdown dropdown-end">
