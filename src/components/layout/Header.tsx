@@ -43,10 +43,7 @@ export function Header() {
                     <button type="button" onClick={() => disconnect()} className="flex items-center">
                         <Avatar address={address} />
                         <div className="flex flex-col text-sm">
-                            <b>
-                                <Name address={address} />
-                            </b>
-                            <Name address={address} showAddress />
+                            <b> <Name address={address} /></b>
                         </div>
                     </button>
                 )}
